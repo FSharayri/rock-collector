@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/rocks/rock-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Rock List</h1>
+  <img src="{% static 'images/happy.png' %}" alt="A cool rock" />
+  
+</section>
+
+<section class="card-container">
+  {% for rock in rocks %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img 
+            src="{% static 'images/cute.png' %}" 
+            alt="A rock"
+          >
+        </div>
+        <h2 class="card-title">{{ rock.name }}</h2>
+        {% if rock.size == 'big' %}
+          <p>A big boi {{rock.color}} {{rock.name}}</p>
+        {% else %}
+          <p>A {{rock.color}} {{rock.name}}</p>
+        {% endif %}
+        <p><small>{{ rock.description }}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
