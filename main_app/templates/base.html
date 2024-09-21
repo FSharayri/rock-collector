@@ -28,12 +28,10 @@
         </div>
         <nav>
         <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/rocks">All Rocks</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="{% url "rock-index" %}">All Rocks</a></li>
+            <li><a href="{% url "rock-create" %}">Add a Rock</a></li>
+            <li><a href="{% url "about" %}">About</a></li>
+            <li style='background-color : black;'><a href="/admin">Admin</a></li>
         </ul>
         </nav>
     </header>
